@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Header.css">
+    <style>
+        .boxe {
+            margin: 10px;
+            padding: 12px;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+
+<body class="">
+    <nav class="navbar navbar-default custom-header">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">Vihaan </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav links">
+                    <li role="presentation"><a href="/jobs">Jobs </a></li>
+                    <li role="presentation"><a href="/volunteer">Volunteering </a></li>
+                    <li role="presentation"><a href="#">Shopping </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <a href="/jobs-add" class="btn btn-default" type="button">Post a Job</a>
+        <h1>Available Jobs</h1>
+        <div id="feed">
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $.get('/jobs/read').done(data => {
+                //                console.log(data);
+                var str = '';
+                for (let i = 0; i < data.length; i++) {
+                    str += '<div class="boxe"><strong>' + data[i].title + '</strong><p>' + data[i].desc + '</p><div class="row"><div class="col-md-10">' + data[i].email + '</div><div class="col-md-2"><button onclick="apply()" class="btn btn-info">Apply</button></div></div></div><br><br>'
+                }
+                $('#feed').html(str);
+            }).fail(err => {
+                console.log(err);
+            });
+        });
+        var apply = () => {
+            alert("Application to jobs will feature soon!");
+        }
+
+    </script>
+</body>
+
+</html>

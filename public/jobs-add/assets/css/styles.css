@@ -1,0 +1,21 @@
+div.disabilty {
+    display: inline-flex;
+}
+
+input[type="checkbox"] {
+    margin: 5px;
+}
+
+.checkbox1 {
+    padding-left: 10px;
+}
+
+checkbox {}
+
+strong {
+    font-size: medium;
+}
+
+.rt {
+    font-size: 20px;
+}

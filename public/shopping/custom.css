@@ -1,0 +1,68 @@
+#navmenu>li {
+    float: left;
+}
+
+#main {
+    padding: 10px;
+}
+
+#moblist>li,
+#clotheslist>li,
+#shoeslist>li {
+    display: inline-block;
+    margin-right: 60px;
+    padding: 10px;
+    padding-top: 4px;
+    box-shadow: 10px 10px 20px #999998;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 36px;
+    color: dodgerblue;
+    text-shadow: #999 0 0 2px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+}
+
+body {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    background-color: #ffff;
+}
+
+#navmenu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2874f0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#navmenu>li>a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#navmenu>li>a:hover {
+    background-color: #2874a0;
+}
+
+.title {
+    background-color: #f4f442;
+    color: black;
+}
+
+ng-view {
+    padding: 20px;
+    margin-top: 80px;
+}
